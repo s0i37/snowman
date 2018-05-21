@@ -534,13 +534,13 @@ void TreePrinter::doPrint(const Typecast *node) {
             break;
         }
         case Typecast::STATIC_CAST: {
-            out_ << "static_cast<" << *node->type() << ">(";
+            out_ << "(" << *node->type() << ")(";
             print(node->operand());
             out_ << ')';
             break;
         }
         case Typecast::REINTERPRET_CAST: {
-            out_ << "reinterpret_cast<" << *node->type() << ">(";
+            out_ << "(" << *node->type() << ")(";
             print(node->operand());
             out_ << ')';
             break;
